@@ -3,6 +3,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { actions } from "./state/slices/theme";
+import Header from "./components/Header";
 
 function App() {
   const dispatch = useDispatch();
@@ -23,11 +24,7 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <div>This is using the dark mode {themeMode}</div>
-      <Button variant="contained" onClick={toggleTheme}>
-        Toggle
-      </Button>
-      <Card>Hello</Card>
+      <Header />
     </ThemeProvider>
   );
 }
